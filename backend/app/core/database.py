@@ -9,6 +9,7 @@ DATABASE_URL = os.getenv(
     "postgresql://postgres:root@localhost:5432/smart_city_db"
 )
 
+
 # Создаем движок SQLAlchemy для PostgreSQL
 # Для Postgres параметр check_same_thread не нужен (в отличие от SQLite)
 engine = create_engine(

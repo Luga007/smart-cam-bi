@@ -1,24 +1,23 @@
-# models/enums.py
 import enum
 
 
 class CameraStatus(enum.Enum):
-    ACTIVE = "Active"
-    INACTIVE = "Inactive"
-    MAINTENANCE = "Maintenance"
+    ACTIVE = "active"
+    INACTIVE = "inactive"
+    MAINTENANCE = "maintenance"
 
 
 class AlertSeverity(enum.Enum):
-    LOW = "Low"
-    MEDIUM = "Medium"
-    HIGH = "High"
-    CRITICAL = "Critical"
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+    CRITICAL = "critical"   # fixed typo (Crittial → CRITICAL)
 
 
 class AlertStatus(enum.Enum):
-    ACTIVE = "Active"
-    INVESTIGATING = "Investigating"
-    RESOLVED = "Resolved"
+    ACTIVE = "active"
+    INVESTIGATING = "investigating"
+    RESOLVED = "resolved"
 
 
 class DetectionType(enum.Enum):

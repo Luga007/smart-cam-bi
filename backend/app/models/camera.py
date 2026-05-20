@@ -14,6 +14,7 @@ from app.models.base import Base
 from app.models.enums import CameraStatus
 
 
+
 class Camera(Base):
     __tablename__ = "cameras"
 
@@ -50,11 +51,18 @@ class Camera(Base):
         nullable=False
     )
 
+    # STREAM URL
+    video_url = Column(String(500), nullable=True)
+
+    # UPLOADED MP4
+    video_file = Column(String(500), nullable=True)
+
     ai_model_version = Column(String(100), nullable=True)
 
     installed_at = Column(DateTime(timezone=True), server_default=func.now())
 
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+
     updated_at = Column(
         DateTime(timezone=True),
         server_default=func.now(),
@@ -62,6 +70,7 @@ class Camera(Base):
     )
 
     street = relationship("Street", back_populates="cameras")
+
     location = relationship("Location", back_populates="cameras")
 
     telemetries = relationship(
